@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-(function(){
+(function () {
   angular
-  .module("wdinstagram", [
+  .module('wdinstagram', [
     'ui.router',
     'ngResource'
   ])
-})();
+})()
