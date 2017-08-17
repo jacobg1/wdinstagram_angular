@@ -2,3 +2,12 @@
 <div ng-repeat="gram in vm.grams">
   <a ui-sref="gramShow({ id: gram.id })"><i>{{gram.body}}</i></a>
 </div>
+
+<h2>Add Gram!</h2>
+
+<form>
+  <input placeholder="author" data-ng-model="vm.newGram.author" />
+  <input placeholder="body" data-ng-model="vm.newGram.body" />
+  <input placeholder="photo" data-ng-model="vm.newGram.photo_url" />
+  <button type="submit" data-ng-click="vm.create()">Create</button>
+</form>

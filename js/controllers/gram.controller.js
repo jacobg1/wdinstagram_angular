@@ -1,6 +1,7 @@
 angular
 .module('wdinstagram')
 .controller('GramIndexController', [
+  '$state',
   'Gram',
   GramIndexControllerFunction
 ])
@@ -9,9 +10,18 @@ angular
   'Gram',
   GramShowControllerFunction
 ])
-function GramIndexControllerFunction (Gram) {
+function GramIndexControllerFunction ($state, Gram) {
   this.grams = Gram.query()
+
+  this.newGram = new Gram()
+
+  this.create = function () {
+    this.newGram.$save((newGram) => {
+      $state.go('gramShow', {id: newGram.id})
+    })
+  }
 }
+
 function GramShowControllerFunction ($stateParams, Gram) {
   this.gram = Gram.get({ id: $stateParams.id })
 }
