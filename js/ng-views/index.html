@@ -1,4 +1,4 @@
 <h1>index working</h1>
 <div ng-repeat="gram in vm.grams">
-  <p>{{gram.author}}</p>
+  <a ui-sref="gramShow({ id: gram.id })"><i>{{gram.body}}</i></a>
 </div>
