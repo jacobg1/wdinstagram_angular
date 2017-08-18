@@ -1,4 +1,13 @@
-<h2>show working</h2>
+<h1></h1>
 <p>{{vm.gram.author}}</p>
 <img ng-src="{{vm.gram.photo_url}}" alt="{{vm.gram.title}}">
 <p><i>{{vm.gram.body}}</i></p>
+
+<h2>edit gram</h2>
+<form>
+  <input placeholder="author" data-ng-model="vm.gram.author" />
+  <input placeholder="body" data-ng-model="vm.gram.body" />
+  <input placeholder="photo" data-ng-model="vm.gram.photo_url" />
+  <button type="submit" data-ng-click="vm.edit()">Edit</button>
+  <button type="delete" data-ng-click="vm.delete()">Delete</button>
+</form>
